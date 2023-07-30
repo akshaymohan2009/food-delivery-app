@@ -49,7 +49,7 @@ function reducerFunction(state, action) {
         let removeItem = state.item.findIndex(item => item.id === action.id)
         let removeItemElement = state.item[removeItem]
         let updatedItem
-        if (removeItemElement.amount === 0) {
+        if (removeItemElement.amount === 1) {
             updatedItem=state.item.filter(item=>item.id!==action.id)
         }
         else {
