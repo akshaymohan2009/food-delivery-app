@@ -56,7 +56,7 @@ function reducerFunction(state, action) {
             updatedItem = [...state.item]
             updatedItem[removeItem] = {
                 ...removeItemElement,
-                amount: removeItemElement.amount--
+                amount: removeItemElement.amount-1
             }
         }
 
