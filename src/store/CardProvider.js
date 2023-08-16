@@ -1,4 +1,5 @@
 import CartContext from "./Cart-context"
+import React from 'react'
 import { useReducer } from 'react'
 const defaultCart = {
     item: [],
@@ -66,6 +67,10 @@ function reducerFunction(state, action) {
             totalAmount: updateTotalAmount
         }
     }
+    else if ( action.type==="CLEAR")
+    {
+        return defaultCart
+    }
     return defaultCart
 }
 function CartProvider(props) {
@@ -83,11 +88,17 @@ function CartProvider(props) {
         })
 
     }
-    const cartContext = {
+    const clearCart= ()=>{
+        dispatchCartItem({
+            action:"CLEAR"
+        })
+    }
+    const cartContext ={
         items: cartState.item,
         amount: cartState.totalAmount,
         addItem: addItemToCart,
         removeItem: removeItemFromCart,
+        clearCart:clearCart,
     }
     return (
         <CartContext.Provider value={cartContext}>

@@ -4,11 +4,21 @@
     margin: 2rem auto;
     animation: meals-appear 1s ease-out forwards;
   }
-  
+
   .meals ul {
     list-style: none;
     margin: 0;
     padding: 0;
+  }
+  .loading{
+    display: flex;
+    justify-content: center; /* Horizontally center the Lottie element */
+    align-items: center; /* Vertically center the Lottie element */
+    height: 100%;
+  }
+  .error{
+    text-align: center;
+    color: crimson;
   }
   
   @keyframes meals-appear {
